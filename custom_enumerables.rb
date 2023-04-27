@@ -11,6 +11,14 @@ module Enumerable
     end
     self
   end
+
+  def my_select
+    filtered_array = []
+    my_each do |element|
+      filtered_array << element if yield(element) == true
+    end
+    filtered_array
+  end
 end
 
 # You will first have to define my_each
