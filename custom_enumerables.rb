@@ -61,6 +61,14 @@ module Enumerable
     end
     mapped_array
   end
+
+  def my_inject(value)
+    sum = value
+    my_each do |element|
+      sum = yield(sum, element)
+    end
+    sum
+  end
 end
 
 # You will first have to define my_each
